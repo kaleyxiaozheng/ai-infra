@@ -9,5 +9,6 @@ __Who defines what process is run within the container?__
 > CMD stands for command that defines the program that will be run within the container when ti starts.
 
 __To build a custom Ubuntu image__
+&#x2705;
 
 </details>
