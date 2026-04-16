@@ -1,8 +1,8 @@
 # ai-infra
 
-<detail>
+<details>
 <summary>click to check</summary>
 
 ### 1.0.1
 
-</detail>
+</details>
