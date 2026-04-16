@@ -1,4 +1,6 @@
-<details><summary>Commands and Arguments in Docker</summary>
+<details>
+<summary> Commands and Arguments in Docker</summary>
+
 Containers are not meant to host an operating system, they are meant to run a specific task or process, such as to host an instance of a web server or application server, or a databas, or simply to carry out some kind of computation or analysis. Once the task is complete, the container exists.  
 
 A container only lives as long as the process inside it is alive.
