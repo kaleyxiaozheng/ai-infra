@@ -63,3 +63,47 @@ __How to inject the configMap into the pod?__
 >> 3️⃣ inject configMap as files in a volume, using `volume` in pod definition file
 
 </details>
+
+<details>
+<summary> Secrets </summary>
+
+__How to inject the secret into the pod?__
+> 👉 There are three ways to inject secret.
+>
+>> 1️⃣ inject secret as a single environment variable, using `env` in pod definition file
+>>
+>> 2️⃣ inject secret as an environment variable, using `envFrom` in pod definition file
+>>
+>> 3️⃣ inject secret as files in a volume, using `volume` in pod definition file
+>>
+>>> If we mount the secret as a volume in the pod, each attribute in the secret is created as a file with the value of the secret as its content inside the container.
+
+```
+apiVersion: v1
+kind: Secret
+metadata:
+  name: app-secret
+data:
+  DB_Host: bX1zcWw=
+  DB_User: cm9vdA==
+  DB_Password: cGFzd3JK
+```
+
+Mount the above secret
+```
+volumes:
+- name: app-secret-volume
+  secret:
+    secretName: app-secret
+```
+
+we can see there are three files created inside the container
+```
+$ ls /opt/app-secret-volumes
+  DB_host      DB_Password      DB_User
+
+$ cat /opt/app-secret-volumes/DB_Password
+  password
+```
+
+</details>
